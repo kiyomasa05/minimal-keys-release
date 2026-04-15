@@ -47,11 +47,6 @@
             key-positions = <8 7>;
         };
 
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <21 20>;
-        };
-
         brauserback {
             bindings = <&mkp MB4>;
             key-positions = <30 31>;
@@ -112,10 +107,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W      &kp E         &kp R             &kp T                                                &kp Y             &kp U     &kp I      &kp O    &kp P
-&kp A             &kp S      &kp D         &kp F             &kp G             &kp UP_ARROW      &kp DOWN_ARROW   &kp H             &mkp MB1  &kp K      &kp L    &mt RIGHT_CONTROL J
-&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V             &kp B             &kp LEFT_ARROW    &kp RIGHT_ARROW  &kp N             &kp M     &kp COMMA  &kp DOT  &kp SLASH
-&kp TAB           &kp LCTRL  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 LANGUAGE_2  &lt 3 SPACE       &lt 3 ENTER      &lt 2 LANGUAGE_1                                &kp RIGHT_SHIFT
+&kp Q             &kp W         &kp E         &kp R             &kp T                                             &kp Y        &kp U     &kp I      &kp O    &kp P
+&mt LCTRL A       &kp S         &kp D         &kp F             &kp G        &kp UP_ARROW        &kp DOWN_ARROW   &kp H        &mkp MB1  &kp K      &kp L    &mt RIGHT_CONTROL J
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp LEFT_ARROW      &kp RIGHT_ARROW  &kp N        &kp M     &kp COMMA  &kp DOT  &kp SLASH
+&lt 4 TAB         &kp LEFT_ALT  &kp LEFT_WIN  &lt 1 LANGUAGE_2  &lt 1 SPACE  &lt 3 LANGUAGE_1    &lt 3 BACKSPACE  &lt 2 ENTER                                &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -123,10 +118,10 @@
 
         layer_1 {
             bindings = <
-&kp ESCAPE             &kp F7  &kp F8  &kp F9  &kp F12                                      &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMBER_0  &kp PERCENT
-&kp LG(LEFT_BRACKET)   &kp F4  &kp F5  &kp F6  &kp F11  &kp LC(MINUS)        &kp LG(MINUS)  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS         &kp SLASH
-&kp LG(RIGHT_BRACKET)  &kp F1  &kp F2  &kp F3  &kp F10  &kp LC(LS(MINUS))    &kp LG(PLUS)   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp MINUS        &kp ASTERISK
-&trans                 &trans  &trans  &trans  &trans   &trans               &trans         &trans                                                              &kp BACKSLASH
+&kp ESCAPE             &kp F7  &kp F8  &kp F9  &kp F12                                      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp N0     &kp PERCENT
+&kp LG(LEFT_BRACKET)   &kp F4  &kp F5  &kp F6  &kp F11  &kp LC(MINUS)        &kp LG(MINUS)  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS   &kp SLASH
+&kp LG(RIGHT_BRACKET)  &kp F1  &kp F2  &kp F3  &kp F10  &kp LC(LS(MINUS))    &kp LG(PLUS)   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS  &kp ASTERISK
+&trans                 &trans  &trans  &trans  &trans   &trans               &trans         &trans                                               &kp BACKSLASH
             >;
 
             sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
@@ -148,9 +143,9 @@
         layer_3 {
             bindings = <
 &kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                                &trans           &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans    &trans             &kp PG_UP        &mkp MB1        &kp DOWN_ARROW  &mkp MB2         &bt BT_NXT
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans             &kp PG_DN        &mkp MB4        &trans          &mkp MB5         &bt BT_PRV
-&trans          &trans                  &trans          &trans                   &trans   &trans    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                                                   &bt BT_CLR
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &none     &none              &kp PG_UP        &mkp MB1        &kp DOWN_ARROW  &mkp MB2         &trans
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &none     &none              &kp PG_DN        &mkp MB4        &trans          &mkp MB5         &trans
+&trans          &trans                  &trans          &trans                   &trans   &trans    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                                                   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
