@@ -19,27 +19,26 @@
         , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row3 (動作確認済み)
         ;
 };
-
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
+            /* MISOをMOSIと同じピンにせず、MOSIのみ定義（3線式動作のため） */
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>;
             low-power-enable;
         };
     };
 };
 
 / {
+    /* リスナーにプロセッサを明示 */
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
@@ -52,6 +51,7 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
+    /* CSピンは Matrix で使っていない D7 (P1.12) でOK */
     cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
 
     trackball: trackball@0 {
@@ -60,9 +60,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        /* トラボの速度 */
-        /* 400 / 800 / 1200 / 1600 / 2000 / 2400 / 3200 / 4000 から選択 */
-        cpi = <2000>; 
+        cpi = <2000>; /* 赤い球用の設定 */
         scroll-layers = <3>;
     };
 };
