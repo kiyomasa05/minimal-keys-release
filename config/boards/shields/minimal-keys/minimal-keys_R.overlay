@@ -60,6 +60,9 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        /* トラボの速度 */
+        /* 400 / 800 / 1200 / 1600 / 2000 / 2400 / 3200 / 4000 から選択 */
+        cpi = <2000>; 
         scroll-layers = <3>;
     };
 };
