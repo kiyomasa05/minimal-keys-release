@@ -1,5 +1,4 @@
 #include "minimal-keys.dtsi"
-#include <dt-bindings/zmk/input_transform.h>
 
 &xiao_serial { status = "disabled"; };
 
@@ -41,18 +40,18 @@
 };
 
 / {
-    /* ここで zip_xy_scaler の中身を定義します */
+    /* 速度調整用のプロセッサ定義（定数を数値に置き換え） */
     zip_xy_scaler: zip_xy_scaler {
         compatible = "zmk,input-processor-scaler";
         #input-processor-cells = <2>;
-        type = <INPUT_EV_REL>;
-        codes = <INPUT_REL_X INPUT_REL_Y>;
+        type = <0x02>;      /* INPUT_EV_REL */
+        codes = <0x00 0x01>; /* INPUT_REL_X, INPUT_REL_Y */
     };
 
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        /* 上で定義したスケーラーを呼び出し、2/1倍（2倍速）に設定 */
+        /* 赤い球対策：2倍速（2 1）に設定。物足りなければ 3 1 に変更 */
         input-processors = <&zip_xy_scaler 2 1>;
     };
 };
