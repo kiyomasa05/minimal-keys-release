@@ -13,6 +13,15 @@
     quick-tap-ms = <200>;
 };
 
+macros {
+        mc_to_l0: mc_to_l0 {  // 名前を変更
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "MC_TO_L0";
+        };
+    };
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -42,7 +51,7 @@
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
+            bindings = <&mo>, <&mc_to_l0>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
