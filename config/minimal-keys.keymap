@@ -42,7 +42,7 @@
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            bindings = <&mo>;
+            bindings = <&mo>, <&to_layer_0>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -75,7 +75,7 @@
 &lt 4 TAB         &kp LEFT_ALT  &kp LEFT_WIN  &kp LANGUAGE_2  &lt 1 SPACE  &lt 3 LANGUAGE_1        &kp BACKSPACE          &lt 2 ENTER                                &mt RIGHT_SHIFT LG(LS(NUMBER_4))
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(LEFT_ARROW) LC(RIGHT_ARROW)>;
+            sensor-bindings = <&inc_dec_kp LC(RIGHT_ARROW) LC(LEFT_ARROW)>;
         };
 
         layer_1 {
