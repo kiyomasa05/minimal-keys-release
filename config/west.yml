@@ -4,8 +4,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: hyhy-masa
       url-base: https://github.com/hyhy-masa
-    - name: petejohanson  # <-- 追加
-      url-base: https://github.com/petejohanson
     - name: caksoylar  # <-- new entry
       url-base: https://github.com/caksoylar  
   projects:
@@ -13,12 +11,9 @@ manifest:
       remote: hyhy-masa
       revision: 09ee8b42
       import: app/west.yml
-    # - name: zmk-pmw3610-driver
-    #   remote: hyhy-masa
-    #   revision: c9ab9a3f
     - name: zmk-pmw3610-driver
-      remote: petejohanson # <-- 変更
-      revision: main        # <-- 変更
+      remote: hyhy-masa
+      revision: c9ab9a3f
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: e9472d6c
