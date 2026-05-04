@@ -1,5 +1,4 @@
 #include "minimal-keys.dtsi"
-#include <behaviors/input_processors.dtsi>
 &xiao_serial { status = "disabled"; };
 &default_transform {
     col-offset = <6>;
@@ -44,7 +43,6 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_xy_scaler 3 1>;
     };
 };
 
