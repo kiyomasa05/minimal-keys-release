@@ -43,8 +43,6 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-　　　　　/* ここに速度倍率の設定を追加します */
-        input-processors = <&zip_xy_scaler 3 1>; // 2/1倍（2倍速）にする
     };
 };
 
