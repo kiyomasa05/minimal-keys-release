@@ -1,4 +1,5 @@
 #include "minimal-keys.dtsi"
+#include <behaviors/input_processors.dtsi>
 &xiao_serial { status = "disabled"; };
 &default_transform {
     col-offset = <6>;
