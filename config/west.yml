@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: hyhy-masa
       url-base: https://github.com/hyhy-masa
+    - name: petejohanson  # <-- 追加
+      url-base: https://github.com/petejohanson
     - name: caksoylar  # <-- new entry
       url-base: https://github.com/caksoylar  
   projects:
